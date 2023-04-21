@@ -1,12 +1,13 @@
 const express = require('express');
-const { studentRouter } = require('./routes/students.router');
+const { studentRouter, studgroupRouterTasck } = require('./routes/students.router');
+
 const app = express()
 
 const port = 3000
 
 
-app.use('/students', studentRouter)
-
+//app.use('/students', studentRouter)
+app.use('/tasck', studgroupRouterTasck)
 
 
 // Not Found request

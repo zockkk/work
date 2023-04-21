@@ -1,4 +1,6 @@
 const studentService = require('../services/student.service')
+const educationServiceTasck = require('../services/education.tasck.service')
+
 
 module.exports.getAllStudents = (req, res) => {
     studentService.getAllStudents().then(students =>{
@@ -6,7 +8,18 @@ module.exports.getAllStudents = (req, res) => {
     })
 }
 
-
+module.exports.getAllInfo = async (req,res) => {
+    let idDepartment = req.query.idDepartment
+    if (!idDepartment){
+        res.status(400).json({
+            error: "Не указан идентификатор департамента"
+        })
+        return
+    }
+    idDepartment = parseInt(idDepartment)
+    const reportData = await educationServiceTasck.getGroupsReportData(idDepartment)
+    res.json(reportData)
+}
 
 // 
 function testFunction() {
