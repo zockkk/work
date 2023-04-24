@@ -1,0 +1,5 @@
+FROM node:14.13.1
+WORKDIR /var/www/students-service
+COPY ./ /var/www/students-service/
+ENTRYPOINT ["npm", "run", "dev"]
+EXPOSE 3000

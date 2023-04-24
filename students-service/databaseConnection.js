@@ -1,7 +1,7 @@
 const mainConnection = require('knex')({
     client: 'pg',
     connection: {
-      host : 'localhost',
+      host : 'db-jmu',
       port : 5432,
       user : 'dbjmu',
       password : 'Afgihn215zxdg',

@@ -1,0 +1,6 @@
+FROM node:14.13.1
+WORKDIR /var/www/students-service
+COPY ./students-service /var/www/students-service
+RUN npm install
+ENTRYPOINT ["npm", "start"]
+EXPOSE 8000
